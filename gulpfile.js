@@ -12,12 +12,12 @@ gulp.task('browser-sync', function() {
 
     // Watch tasks
     gulp.watch('./src/*.js', ['uglify']);
-    gulp.watch('./src/*.scss', ['scss']);
+    gulp.watch('./src/*.scss', ['sass']);
 
     gulp.watch(['./build/**/*.*', 'index.html'])
         .on('change', browserSync.reload);
 });
-gulp.task('scss', function(){
+gulp.task('sass', function(){
    return gulp.src('./src/*.scss')
               .pipe(sass().on('error', sass.logError))
               .pipe(gulp.dest('./build'));
