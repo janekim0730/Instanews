@@ -70,6 +70,12 @@ img {
   max-width: 100%;
   text-align: center; }
 
+.articleimage {
+  display: flex;
+  height: 70px;
+  background-position: center center;
+  background-size: cover; }
+
 /* Selector */
 .select-outer-container {
   display: block;
