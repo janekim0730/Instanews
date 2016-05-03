@@ -57,7 +57,7 @@ span {
 	flex-wrap: wrap;
   justify-content: center;
 	line-height: 2;
-  height: 100vh auto;
+  height: 100vh;
 	padding: 3rem 1.5rem 1rem 1.5rem;
 }
 
@@ -130,7 +130,7 @@ left: 0;
 right: 0;
 text-align: left;
 display: flex;
-flex-wrap: row nowrap;
+flex-wrap: nowrap;
 align-items: center;
 justify-content: center;
 text-decoration: none;
