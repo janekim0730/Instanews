@@ -3,6 +3,8 @@ $( document ).ready(function() { //load it when it is ready
     $('.sections').on('change', function(event){ //whenever dropbox changes
       event.preventDefault();
 
+      $('.categories').prepend('<p class="ajax-loader"><img src="images/ajax-loader.gif" alt="loading"></p> ');
+      $('.initial').addClass("minimize");
       var $selection = $('.sections :selected').val(); //it stores the value after selected
 
       $.ajax({//get Api
@@ -12,6 +14,8 @@ $( document ).ready(function() { //load it when it is ready
 
         .done(function(data){ //when it is successful grabing the json
            console.log(data);
+
+           $('.ajax-loader').remove();
 
            var nytData = data.results,
                          articleLink,
@@ -33,7 +37,7 @@ $( document ).ready(function() { //load it when it is ready
 
             nytItems += '<li class="article-item">';
             nytItems += '<a class="articleimage" href="' + articleLink + '" target="_blank" style="background-image:url(\'' + articleImageUrl + '\');">';
-            nytItems += '<p class="caption">' + articleCaption + '</p></a></li>';
+            nytItems += '<p class="text-container">' + articleCaption + '</p></a></li>';
           }
 
           $('.item-container').append(nytItems);

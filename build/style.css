@@ -36,6 +36,7 @@ body {
   font-family: 'opensans';
   font-style: normal;
   font-weight: normal;
+  font-size: 16px;
   background-color: #000;
   color: #fff; }
 
@@ -55,7 +56,7 @@ span {
   flex-wrap: wrap;
   justify-content: center;
   line-height: 2;
-  height: 85vh;
+  height: 100vh auto;
   padding: 3rem 1.5rem 1rem 1.5rem; }
 
 .logo {
@@ -70,13 +71,19 @@ img {
   max-width: 100%;
   text-align: center; }
 
-.articleimage {
-  display: flex;
-  height: 70px;
-  background-position: center center;
-  background-size: cover; }
+.ajax-loader {
+  max-width: 50px;
+  max-height: 50px;
+  margin: 0 auto; }
 
 /* Selector */
+.sections {
+  width: 10rem;
+  height: 2rem; }
+
+.categories {
+  align-items: center; }
+
 .select-outer-container {
   display: block;
   width: 300px;
@@ -89,15 +96,53 @@ img {
   text-align: center;
   width: 100%; }
 
+.item-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+.article-item {
+  position: relative;
+  flex: 0 1 100%; }
+
+.article-item:before {
+  content: "";
+  padding-top: 100%;
+  display: block; }
+
+.articleimage {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: left;
+  display: flex;
+  flex-wrap: row nowrap;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  line-height: 1;
+  background-size: cover;
+  background-position: center center; }
+
+.text-container {
+  align-self: flex-end;
+  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+  background-color: rgba(0, 0, 0, 0.5); }
+
 /* Footer */
 .copyright {
   text-align: center;
-  margin-top: 3rem;
-  height: 15vh; }
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
 
 /* ////////// Media Queries ////////// */
 /* Tablet */
 @media all and (min-width: 600px) {
+  .minimize {
+    height: 50vh; }
   .select-outer-container {
     display: flex;
     flex-wrap: wrap;
@@ -105,12 +150,20 @@ img {
   .select-container {
     text-align: left; }
   .logo {
-    width: 250px; } }
+    width: 100px; }
+  .article-item {
+    position: relative;
+    flex: 0 1 33.3%; } }
 
 /* Desktop */
 @media all and (min-width: 1000px) {
+  .minimize {
+    height: 50vh; }
   .initial {
     justify-content: flex-start; }
   .copyright {
     padding-left: 2rem;
-    text-align: left; } }
+    text-align: left; }
+  .article-item {
+    position: relative;
+    flex: 0 1 25%; } }
