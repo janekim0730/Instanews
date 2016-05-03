@@ -2,7 +2,7 @@ $( document ).ready(function() { //load it when it is ready
 
     $('.sections').on('change', function(event){ //whenever dropbox changes
       event.preventDefault();
-
+      $('.item-container').empty();
       $('.categories').prepend('<p class="ajax-loader"><img src="images/ajax-loader.gif" alt="loading"></p> ');
       $('.initial').addClass("minimize");
       var $selection = $('.sections :selected').val(); //it stores the value after selected
